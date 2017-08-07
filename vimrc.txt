@@ -86,6 +86,20 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+
+" CtrlP tweaks
+" Ignore certain filetypes
+set wildignore+=*.pyc
+" keybinds
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Use Alt+hjkl to switch between windows
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-l> :wincmd l<CR>
+
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
