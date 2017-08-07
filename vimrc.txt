@@ -1,0 +1,111 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Vundle START
+" File tree
+" Use :NERDTree to open the tree
+Plugin 'scrooloose/nerdtree'
+
+" Syntastic syntax checking
+" Install developer tools for syntax checking
+" Install flake8 for Python PEP8
+Plugin 'scrooloose/syntastic'
+
+" YouCompleteMe completions
+Plugin 'Valloric/YouCompleteMe'
+" If YCM is unavailable for your platform, try SuperTab instead
+"Plugin 'ervandew/supertab'
+
+" Sublime Text style multiple cursors
+" Use Ctrl+n to highlight matches and Ctrl+b to undo highlight
+Plugin 'terryma/vim-multiple-cursors'
+
+" Fancy statusbar
+" Powerline fonts recommended
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+
+" Git integration
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" CtrlP fuzzy search
+" Use Ctrl+P to search a project for a file
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Automatically close parentheses, etc.
+Plugin 'Raimondi/delimitMate'
+
+" Hotkeys for commenting/uncommenting
+" g-c-c to toggle a line, g-c-Motion to toggle a motion
+Plugin 'tpope/vim-commentary'
+
+" Markdown Preview
+" Use :PrevimOpen while editing Markdown to open a live preview
+Plugin 'kannokanno/previm'
+
+" Highlight trailing whitespace
+" Use :StripWhitespace to remove trailing shitespace
+Plugin 'ntpeters/vim-better-whitespace'
+
+" Jump around Vimium-style
+" Use Leader-Leader-Motion <target> to jump around
+Plugin 'easymotion/vim-easymotion'
+
+" Better JSON
+Plugin 'elzr/vim-json'
+
+
+" Color scheme stuff
+Plugin 'chriskempson/base16-vim'
+
+
+" Vundle END
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+let base16colorspace=256
+colorscheme base16-default-dark
+
+" show line numbers
+set number
+
+set cursorline
+
+set backspace=indent,eol,start
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+" Highlight matching patterns when searching
+:set hlsearch
