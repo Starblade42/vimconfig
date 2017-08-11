@@ -68,6 +68,8 @@ Plugin 'elzr/vim-json'
 " Color scheme stuff
 Plugin 'chriskempson/base16-vim'
 
+" Overlay amazing autocompletion
+Plugin 'valloric/youcompleteme'
 
 " Vundle END
 
@@ -106,7 +108,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 "let base16colorspace=256
-colorscheme base16-default-dark
+colorscheme base16-google-dark
 
 " show line numbers
 set number
