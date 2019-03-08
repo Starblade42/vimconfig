@@ -1,5 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+let g:syntastic_python_checkers=["flake8"]
+let g:syntastic_python_flake8_args="--ignore=E501"
+let g:ycm_server_python_interpreter = '/usr/local/bin/python2'
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,6 +22,11 @@ Plugin 'scrooloose/nerdtree'
 " Install developer tools for syntax checking
 " Install flake8 for Python PEP8
 Plugin 'scrooloose/syntastic'
+
+" add new text objects for line
+" Make it easy to yank a line (for copying) without newline at the end
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-line'
 
 " YouCompleteMe completions
 Plugin 'Valloric/YouCompleteMe'
@@ -68,8 +76,8 @@ Plugin 'elzr/vim-json'
 " Color scheme stuff
 Plugin 'chriskempson/base16-vim'
 
-" Overlay amazing autocompletion
-Plugin 'valloric/youcompleteme'
+" " Overlay amazing autocompletion
+ "Plugin 'valloric/youcompleteme'
 
 " Vundle END
 
